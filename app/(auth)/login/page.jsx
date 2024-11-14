@@ -10,13 +10,13 @@ function login() {
   const router = useRouter();
 
   return (
-    <main className="flex items-center flex-col h-screen bg-gradient-to-b from-gradient-yellow to-main-yellow justify-center">
-      <div className="flex flex-col items-center  h-3/4 w-3/4 bg-white rounded-3xl border-gradient-yellow border-4 shadow-2xl ">
-        <h1 className="my-16 text-7xl text-dark-blue font-sans font-bold italic">
+    <main className="flex items-center flex-col min-h-screen bg-gradient-to-b from-gradient-yellow to-main-yellow justify-center">
+      <div className="py-6 flex flex-col items-center w-3/4 bg-white rounded-3xl border-gradient-yellow border-4 shadow-2xl ">
+        <h1 className="mb-4 text-7xl text-dark-blue font-sans font-bold italic">
           Lift<br></br>Mate.
         </h1>
 
-        <div className="w-4/5 mb-4">
+        <div className="w-4/5 mb-2">
           <p className="w-full pl-4 font-sans font-bold italic">Email</p>
           <input
             type="text"
@@ -29,7 +29,7 @@ function login() {
           ></input>
         </div>
 
-        <div className="w-4/5 mb-4">
+        <div className="w-4/5 mb-2">
           <p className="w-full pl-4 font-sans font-bold italic">Password</p>
           <input
             type="text"
@@ -46,11 +46,11 @@ function login() {
           <p>
             Or, sign in with <a>Google</a>.
           </p>
-          <br></br>
+
           <p>Don't have an account? Click here.</p>
         </div>
 
-        <div className="w-4/5 ">
+        <div className="w-4/5 mb-5">
           <button className="w-full p-4 bg-dark-blue text-white rounded-3xl text-center">
             Log in
           </button>
