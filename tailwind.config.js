@@ -7,9 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Titillium Web", "sans-serif"],
+      },
       colors: {
         "main-yellow": "#C69F4B",
         "gradient-yellow": "#EAD8B1",
+        "dark-blue": "#001F3F",
       },
     },
   },
