@@ -28,7 +28,7 @@ function register() {
             className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            placeholder="something@email.com"
+            placeholder="John"
           ></input>
         </div>
 
@@ -41,7 +41,7 @@ function register() {
             className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            placeholder="something@email.com"
+            placeholder="Pork"
           ></input>
         </div>
 
@@ -67,7 +67,7 @@ function register() {
             className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="something@email.com"
+            placeholder="jn4Hji&K2!"
           ></input>
         </div>
 
@@ -82,8 +82,13 @@ function register() {
             className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
             value={cPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="something@email.com"
+            placeholder="jn4Hji&K2!"
           ></input>
+        </div>
+
+        <div className="flex w-4/5 pl-6 space-x-4 text-sm">
+          <input type="checkbox" className="border-dark-blue"></input>
+          <p>Click here to acknowledge that you have read and agree to our terms of service and privacy policy.</p>
         </div>
 
         <div className="w-4/5 my-5">
