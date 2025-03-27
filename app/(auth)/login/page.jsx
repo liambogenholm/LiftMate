@@ -2,61 +2,82 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  User,
+  LogOut,
+  Plus,
+  ChevronRight,
+  ArrowLeft,
+  Dumbbell,
+  BarChart2,
+  Award,
+  Save,
+} from "lucide-react";
 
 function login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const router = useRouter();
 
   return (
-    <main className="flex items-center flex-col min-h-screen bg-gradient-to-b from-gradient-yellow to-main-yellow justify-center">
-      <div className="py-6 flex flex-col items-center w-3/4 bg-white rounded-3xl border-gradient-yellow border-4 shadow-2xl ">
-        <h1 className="mb-4 text-7xl text-dark-blue font-sans font-bold italic">
-          Lift<br></br>Mate.
-        </h1>
-
-        <div className="w-4/5 mb-2">
-          <p className="w-full pl-4 font-sans font-bold italic">Email</p>
-          <input
-            type="text"
-            id="userEmail"
-            name="Email"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="something@email.com"
-          ></input>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-coolGray px-4">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-slateBlue">LiftMate</h1>
+          <div className="flex justify-center mt-2 text-palatinateBlue">
+            <Dumbbell size={32} />
+          </div>
         </div>
 
-        <div className="w-4/5 mb-2">
-          <p className="w-full pl-4 font-sans font-bold italic">Password</p>
-          <input
-            type="text"
-            id="userEmail"
-            name="Email"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 text-dark-blue"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="password"
-          ></input>
-        </div>
+        <form onSubmit={console.log("hit")}>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-        <div className="text-sm text-center font mb-5">
-          <p>
-            Or, sign in with <a>Google</a>.
-          </p>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
 
-          <p>Don't have an account? Click here.</p>
-        </div>
-
-        <div className="w-4/5 mb-5">
-          <button className="w-full p-4 bg-dark-blue text-white rounded-3xl text-center">
-            Log in
+          <button
+            className="bg-palatinateBlue w-full py-2 px-4 rounded font-bold text-white focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Sign In
           </button>
+        </form>
+
+        <div className="mt-4 text-center">
+          <p className="text-sm">
+            Don't have an account?{" "}
+            <a href="./register" className="font-bold text-slateBlue">
+              Sign Up
+            </a>
+          </p>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

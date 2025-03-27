@@ -2,105 +2,130 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import {
+  User,
+  LogOut,
+  Plus,
+  ChevronRight,
+  ArrowLeft,
+  Dumbbell,
+  BarChart2,
+  Award,
+  Save,
+} from "lucide-react";
 
 function register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [cPassword, setConfirmPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-
   const router = useRouter();
 
   return (
-    <main className="flex items-center flex-col min-h-screen bg-gradient-to-b from-gradient-yellow to-main-yellow ">
-      <h1 className="font-sans font-bold italic text-3xl text-dark-blue my-4">
-        Register
-      </h1>
-
-      <div className="py-6 flex flex-col items-center w-3/4 bg-white rounded-3xl border-gradient-yellow border-4 shadow-2xl ">
-        <div className="w-4/5 ">
-          <p className="w-full pl-4 font-sans font-bold italic">First Name</p>
-          <input
-            type="text"
-            id="firstName"
-            name="FirstName"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder="John"
-          ></input>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-coolGray p-4">
+      <div className="w-full max-w-md p-8 my-4 bg-white rounded-lg shadow-md">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-slateBlue">LiftMate</h1>
+          <div className="flex justify-center mt-2 text-palatinateBlue">
+            <Dumbbell size={32} />
+          </div>
         </div>
 
-        <div className="w-4/5">
-          <p className="w-full pl-4 font-sans font-bold italic">Last Name</p>
-          <input
-            type="text"
-            id="lastName"
-            name="LastName"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder="Doe"
-          ></input>
-        </div>
+        <form onSubmit={console.log("hit")}>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-        <div className="w-4/5">
-          <p className="w-full pl-4 font-sans font-bold italic">Email</p>
-          <input
-            type="text"
-            id="userEmail"
-            name="Email"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="something@email.com"
-          ></input>
-        </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="firstname"
+              type="text"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-        <div className="w-4/5">
-          <p className="w-full pl-4 font-sans font-bold italic">Password</p>
-          <input
-            type="text"
-            id="userPassword"
-            name="Password"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="jn4Hji&K2!"
-          ></input>
-        </div>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="lastName"
+              type="text"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-        <div className="w-4/5 mb-2">
-          <p className="w-full pl-4 font-sans font-bold italic">
-            Confirm Password
-          </p>
-          <input
-            type="text"
-            id="userConfirmPassword"
-            name="ConfirmPassword"
-            className="mb-4 bg-gradient-yellow rounded-3xl border-dark-blue border-2 shadow-lg w-full p-4 placeholder-gray-500 font-sans text-dark-blue"
-            value={cPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="jn4Hji&K2!"
-          ></input>
-        </div>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
 
-        <div className="flex w-4/5 pl-6 space-x-4 text-sm">
-          <input type="checkbox" className="border-dark-blue"></input>
-          <p>
-            Click here to acknowledge that you have read and agree to our terms
-            of service and privacy policy.
-          </p>
-        </div>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="cnfPassword"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              id="cnfPassword"
+              type="password"
+              placeholder="Re-enter your password"
+              required
+            />
+          </div>
 
-        <div className="w-4/5 my-5">
-          <button className="w-full p-4 bg-dark-blue text-white rounded-3xl text-center">
-            Log in
+          <button
+            className="bg-palatinateBlue w-full py-2 px-4 rounded font-bold text-white focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Register
           </button>
+        </form>
+
+        <div className="mt-4 text-center">
+          <p className="text-sm">
+            Don't have an account?{" "}
+            <a href="#" className="font-bold text-slateBlue">
+              Sign Up
+            </a>
+          </p>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 
