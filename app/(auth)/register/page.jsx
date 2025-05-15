@@ -55,7 +55,7 @@ function register() {
               className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               id="firstname"
               type="text"
-              placeholder="Enter your email"
+              placeholder="Enter your first name"
               required
             />
           </div>
@@ -71,7 +71,7 @@ function register() {
               className="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               id="lastName"
               type="text"
-              placeholder="Enter your email"
+              placeholder="Enter your last name"
               required
             />
           </div>
